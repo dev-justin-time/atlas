@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090c0d">
+  <title>A.T.L.A.S.</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="bootOverlay" class="boot-overlay" aria-hidden="true">
+    <div class="boot-mark">◈</div>
+    <span class="boot-name">A.T.L.A.S.</span>
+    <span class="boot-sub">INITIALIZING</span>
+  </div>
+
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <span class="brand-name">A.T.L.A.S.</span>
+        <span class="brand-protocol">PROTOCOL</span>
+      </div>
+      <button id="calendarOpen" class="calendar-open" type="button" aria-label="Open calendar">Calendar</button>
+      <div class="header-meta">
+        <div class="status-badge"><span class="status-dot" aria-hidden="true"></span><span id="status" class="status">INITIALIZING</span></div>
+        <time id="clock" class="clock" aria-label="Current time">--:--</time>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <aside class="sidebar">
+        <section class="sidebar-section">
+          <h2 class="section-label">Module catalog <span id="moduleCount">10</span></h2>
+          <div id="moduleList" class="module-list"></div>
+        </section>
+
+        <section class="sidebar-section integrations">
+          <h2 class="section-label">Connected services</h2>
+          <div class="service-row">
+            <span id="assistantServiceDot" class="service-dot" aria-hidden="true"></span>
+            <span>Assistant</span>
+            <span id="assistantServiceState" class="service-state">CHECKING</span>
+          </div>
+          <div class="service-row">
+            <span class="service-dot" aria-hidden="true"></span>
+            <span>Web search</span>
+            <span class="service-state">ON DEMAND</span>
+          </div>
+          <div class="service-row">
+            <span id="voiceServiceDot" class="service-dot" aria-hidden="true"></span>
+            <span>Voice replies</span>
+            <span id="voiceServiceState" class="service-state">CHECKING</span>
+          </div>
+          <div class="service-row">
+            <span id="notesServiceDot" class="service-dot limited" aria-hidden="true"></span>
+            <span>Private notes</span>
+            <span id="notesServiceState" class="service-state">CHECKING</span>
+          </div>
+          <div class="service-row">
+            <span id="historyServiceDot" class="service-dot limited" aria-hidden="true"></span>
+            <span>Chat history</span>
+            <span id="historyServiceState" class="service-state">SIGN IN</span>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace" aria-label="A.T.L.A.S. assistant">
+        <div class="workspace-head">
+          <div>
+            <div id="workspaceEyebrow" class="eyebrow">COMMAND INTERFACE</div>
+            <h1 id="workspaceTitle">Terminal</h1>
+          </div>
+          <div class="session-card">
+            <span class="session-label">SESSION REQUESTS</span>
+            <span id="requestCount" class="session-count">0</span>
+          </div>
+        </div>
+
+        <div class="avatar-stage">
+          <div class="avatar" id="avatar" aria-label="A.T.L.A.S. female voice avatar">
+            <img id="avatarImg" src="uploads/talkalot-still.jpg" alt="A.T.L.A.S. avatar" draggable="false">
+            <span class="avatar-ring" aria-hidden="true"></span>
+            <span class="avatar-ring inner" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <section id="chatArea" class="terminal" aria-label="Conversation" aria-live="polite"></section>
+
+        <form id="composer" class="inputbar" autocomplete="off">
+          <button id="micDraft" class="mic-button" type="button" aria-label="Dictate into the message field" title="Dictate, then edit before sending">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21m-4 0h8"></path></svg>
+          </button>
+          <button id="voiceSend" class="mic-button voice-send" type="button" aria-label="Listen for a spoken command and send it" title="Speak a command, then send it when you stop listening">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="6" height="12" rx="3"></rect><path d="M2.5 11a6.5 6.5 0 0 0 13 0M9 17.5V21m-4 0h8M17 9h5m-2.5-2.5L22 9l-2.5 2.5"></path></svg>
+          </button>
+          <input id="input" name="message" type="text" maxlength="10000" placeholder="Enter a command or ask A.T.L.A.S.…" aria-label="Message A.T.L.A.S." autocomplete="off">
+          <button id="send" type="submit" aria-label="Send message"><span>EXECUTE</span><b aria-hidden="true">↗</b></button>
+        </form>
+        <div class="input-hint"><span>MIC: DICTATE &amp; EDIT</span><span>MIC ↗: SPEAK &amp; SEND</span><span>/HELP FOR COMMANDS</span></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
