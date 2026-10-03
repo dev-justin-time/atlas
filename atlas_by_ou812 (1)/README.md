@@ -24,3 +24,5 @@ This is a Websim project, not a package-managed application. **index.html** is t
 ## Important limits
 
 Specialist modes are prompt workflows, not connected business systems or professional services. ROI output is a simple estimate, not financial advice. Feedback adapts prompts on one browser; it does not train or fine-tune a model. Websim's publish/deploy action is host-managed, so this workspace cannot safely enable unattended production deployment without an external target and its credentials.
+
+However if that ability intrests you, im happy to talk about creaing an exclusive custom enterprise edition 
